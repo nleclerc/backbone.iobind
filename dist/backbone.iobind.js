@@ -133,7 +133,6 @@ Backbone.Model.prototype.ioUnbind = function (eventName, io, callback) {
     } else {
       this.unbind(eventName);
       io.removeAllListeners(globalName);
-      delete io.$events[globalName];
     }
     if (events.length === 0) {
       delete ioEvents[eventName];
@@ -278,7 +277,6 @@ Backbone.Collection.prototype.ioUnbind = function (eventName, io, callback) {
     } else {
       this.unbind(eventName);
       io.removeAllListeners(globalName);
-      delete io.$events[globalName];
     }
     if (events.length === 0) {
       delete ioEvents[eventName];
